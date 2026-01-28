@@ -1,0 +1,332 @@
+/* ---------- global.css ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Plus+Jakarta+Sans:ital,wght@0,400;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fonts (unchanged) */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  /* Layout tokens */
+  --page-max-width: 1440px; /* preserved */
+
+  /* Reduced mobile horizontal padding for small viewports (desktop original: 128px = 8rem) */
+  --container-h-padding: 2rem; /* 16px (was 128px) - mobile baseline: reduces horizontal gutters for small screens */
+
+  /* Section vertical padding: original 10px -> 0.62rem. Kept small on mobile to avoid extreme stacking; increased at md. */
+  --section-vertical-padding: 0.62rem; /* 10px */
+
+  /* Section gap (reduced on mobile for density, expanded on desktop) */
+  --section-gap: 2.5rem; /* 24px (reduced from 96px desktop) */
+
+  --page-bg: #F9FAFB;
+
+  /* H1: 28 → 44 */
+  --h1-font-size: clamp(1.75rem, 1.25rem + 2.2vw, 2.75rem);
+  --h1-line-height: 1.2;
+  --h1-letter-spacing: -0.005em;
+  --h1-font-weight: 600;
+  --h1-color: #1A1A1A;
+
+  /* H2: 22 → 32 */
+  --h2-font-size: clamp(1.375rem, 1.05rem + 1.4vw, 2rem);
+  --h2-line-height: 1.4;
+  --h2-letter-spacing: -0.005em;
+  --h2-font-weight: 600;
+  --h2-color: #000000;
+
+  /* H3: 16 → 18 */
+  --h3-font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --h3-line-height: 1.35;
+  --h3-letter-spacing: -0.005em;
+  --h3-font-weight: 600;
+  --h3-color: #1A1A1A;
+
+  /* H4: 18 → 22 */
+  --h4-font-size: clamp(1.125rem, 1rem + 0.7vw, 1.375rem);
+  --h4-line-height: 1.3;
+  --h4-letter-spacing: -0.005em;
+  --h4-font-weight: 600;
+  --h4-color: #000000;
+
+
+  /* =======================
+    BODY TEXT
+    ======================= */
+
+  /* Body 1: 18 → 20 */
+  --body-1-font-size: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);
+  --body-1-line-height: 1.4;
+  --body-1-letter-spacing: 0.02em;
+  --body-1-font-weight: 400;
+  --body-1-color: #444444;
+  --body-1-text-align: left;
+  --body-1-font-style: normal;
+
+  /* Body 2: 14 → 16 */
+  --body-2-font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --body-2-line-height: 1.6;
+  --body-2-letter-spacing: 0em;
+  --body-2-font-weight: 400;
+  --body-2-color: #000000;
+  --body-2-text-align: center;
+  --body-2-font-style: italic;
+
+  /* Body 3: 16 → 18 */
+  --body-3-font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --body-3-line-height: 1.3;
+  --body-3-letter-spacing: -0.06em;
+  --body-3-font-weight: 400;
+  --body-3-color: #6B7280;
+  --body-3-text-align: center;
+  --body-3-font-style: normal;
+
+  /* Body 4: 16 → 18 */
+  --body-4-font-size: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --body-4-line-height: 1.3;
+  --body-4-letter-spacing: 0em;
+  --body-4-font-weight: 400;
+  --body-4-color: #000000;
+  --body-4-text-align: left;
+  --body-4-font-style: normal;
+
+  --font-h-weight: 600;
+  --font-h-letter-spacing: -0.005em;
+  --font-h-line-height: 1.2;
+
+  /* Body primitive */
+  --font-body-weight: 400;
+  --font-body-letter-spacing: 0.02em;
+  --font-body-line-height: 1.4;
+}
+
+/* Tablet overrides (md = min-width: 768px) */
+@media (min-width: 768px) {
+  :root {
+    --container-h-padding: 2.5rem; /* 40px at md */
+    --section-vertical-padding: 1rem; /* 16px at md */
+    --section-gap: 3rem; /* 48px at md */
+  }
+}
+
+/* Desktop overrides (lg = min-width: 1024px) */
+@media (min-width: 1024px) {
+  :root {
+    --container-h-padding: 8rem; /* 128px (original desktop value) */
+    --section-vertical-padding: 0.62rem; /* 10px (original) */
+    --section-gap: 6rem; /* 96px (original desktop) */
+  }
+}
+
+/* Base global styles (preserve original structure) */
+@layer base {
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: var(--font-body);
+    background-color: var(--page-bg);
+    color: var(--body-1-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* skip link for accessibility (unchanged behaviour) */
+  .skip-to-content-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-to-content-link:focus {
+    left: 8px;
+    top: 8px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #000;
+    color: #fff;
+    z-index: 9999;
+    border-radius: 4px;
+  }
+}
+
+/* Components & utilities referencing tokens (unchanged tokens usage; variables now responsive) */
+@layer components {
+  .page-container {
+    max-width: var(--page-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-h-padding);
+    padding-right: var(--container-h-padding);
+    background-color: var(--page-bg);
+  }
+
+  .page-container--transparent {
+    max-width: var(--page-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-h-padding);
+    padding-right: var(--container-h-padding);
+    background-color: transparent;
+  }
+
+  .page-section {
+    padding-top: var(--section-vertical-padding);
+    padding-bottom: var(--section-vertical-padding);
+  }
+
+  .section-gap > * + * {
+    margin-top: var(--section-gap);
+  }
+
+  /* Typographic utility classes (usable by non-Tailwind consumers) */
+  .h1, .text-h1 {
+    font-family: var(--font-heading);
+    font-weight: var(--h1-font-weight);
+    font-size: var(--h1-font-size);
+    line-height: var(--h1-line-height);
+    letter-spacing: var(--h1-letter-spacing);
+    color: var(--h1-color);
+    margin: 0;
+  }
+
+  .h2, .text-h2 {
+    font-family: var(--font-heading);
+    font-weight: var(--h2-font-weight);
+    font-size: var(--h2-font-size);
+    line-height: var(--h2-line-height);
+    letter-spacing: var(--h2-letter-spacing);
+    color: var(--h2-color);
+    margin: 0;
+  }
+
+  .h3, .text-h3 {
+    font-family: var(--font-heading);
+    font-weight: var(--h3-font-weight);
+    font-size: var(--h3-font-size);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--h3-letter-spacing);
+    color: var(--h3-color);
+    margin: 0;
+  }
+
+  .h4, .text-h4 {
+    font-family: var(--font-heading);
+    font-weight: var(--h4-font-weight);
+    font-size: var(--h4-font-size);
+    line-height: var(--h4-line-height);
+    letter-spacing: var(--h4-letter-spacing);
+    color: var(--h4-color);
+    margin: 0;
+  }
+
+  .body-1, .text-body-1 {
+    font-family: var(--font-body);
+    font-weight: var(--body-1-font-weight);
+    font-size: var(--body-1-font-size);
+    line-height: var(--body-1-line-height);
+    letter-spacing: var(--body-1-letter-spacing);
+    color: var(--body-1-color);
+    text-align: var(--body-1-text-align);
+    font-style: var(--body-1-font-style);
+    margin: 0;
+  }
+
+  .body-2, .text-body-2 {
+    font-family: var(--font-body);
+    font-weight: var(--body-2-font-weight);
+    font-size: var(--body-2-font-size);
+    line-height: var(--body-2-line-height);
+    letter-spacing: var(--body-2-letter-spacing);
+    color: var(--body-2-color);
+    text-align: var(--body-2-text-align);
+    font-style: var(--body-2-font-style);
+    margin: 0;
+  }
+
+  .body-3, .text-body-3 {
+    font-family: var(--font-body);
+    font-weight: var(--body-3-font-weight);
+    font-size: var(--body-3-font-size);
+    line-height: var(--body-3-line-height);
+    letter-spacing: var(--body-3-letter-spacing);
+    color: var(--body-3-color);
+    text-align: var(--body-3-text-align);
+    font-style: var(--body-3-font-style);
+    margin: 0;
+  }
+
+  .body-4, .text-body-4 {
+    font-family: var(--font-body);
+    font-weight: var(--body-4-font-weight);
+    font-size: var(--body-4-font-size);
+    line-height: var(--body-4-line-height);
+    letter-spacing: var(--body-4-letter-spacing);
+    color: var(--body-4-color);
+    text-align: var(--body-4-text-align);
+    font-style: var(--body-4-font-style);
+    margin: 0;    
+  }
+ 
+  .text-h {
+    font-family: var(--font-heading);
+    font-weight: var(--font-h-weight);
+    letter-spacing: var(--font-h-letter-spacing);
+    line-height: var(--font-h-line-height);
+    margin: 0;
+  }
+
+  /* ---------------- Body text primitive ---------------- */
+  .text-body {
+    font-family: var(--font-body);
+    font-weight: var(--font-body-weight);
+    letter-spacing: var(--font-body-letter-spacing);
+    line-height: var(--font-body-line-height);
+    margin: 0;
+  }  
+
+  .btn-interaction {
+    transition-property: background-color, box-shadow, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+  }
+
+  .btn-interaction:hover {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-interaction:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
+  }  
+}
+
+/* Expose utilities for Tailwind users (class names exist; styles live above) */
+@layer utilities {
+  .text-h1 { }
+  .text-h2 { }
+  .text-h3 { }
+  .text-h4 { }
+  .text-h { }
+  .text-body-1 { }
+  .text-body-2 { }
+  .text-body-3 { }
+  .text-body-4 { }
+  .text-body { }
+}
+
+@layer components {
+    .section {
+      background-color: var(--page-bg);
+      padding-block: var(--section-vertical-padding);
+    }
+  }
+
+html {
+  scroll-behavior: smooth;
+}
