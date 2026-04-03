@@ -12,15 +12,15 @@ import capabilities_2 from "./assets/images/capability_2.png";
 import capabilities_3 from "./assets/images/capability_3.png";
 
  const items_business = [
-   { id: 'b1', title: 'Make Your Processes AI-Driven', description: 'Turn routine workflows into intelligent systems — from lead follow-ups to report generation — that adapt and improve continuously.' },
-   { id: 'b2', title: 'Automate Complex Tasks', description: 'Deploy AI agents that analyze data, make decisions, and take action — from drafting proposals to triaging support queries.' },
-   { id: 'b3', title: 'Increase Efficiency & Reduce Costs', description: 'Achieve more output with fewer resources — AI runs 24/7, scales instantly, and eliminates repetitive manual effort.' },
+   { id: 'b1', title: 'Applied AI Services', description: 'Targeted AI-driven execution — from research and analysis to content generation and workflow support, delivered without full system builds.' },
+   { id: 'b2', title: 'Production-Grade AI Systems', description: 'End-to-end Agentic AI systems with reasoning, tool usage, and structured workflows — designed for real-world deployment.' },
+   { id: 'b3', title: 'Consultancy', description: 'Guidance on designing, evaluating, and integrating AI systems — from architecture decisions to practical implementation strategies.' },
  ];
 
 const items_capabilities = [
-  { id: 'c1', title: 'Agentic AI Frameworks', description: 'CrewAI, LangGraph, OpenAI SDK, MCP', backgroundImage: capabilities_1},
-  { id: 'c2', title: 'Infrastructure', description: 'RAG, Toolings, Docker, SQL, REST API, WebSockets', backgroundImage: capabilities_2},
-  { id: 'c3', title: 'Frontend', description: 'React JS, Tailwind CSS, Shadcn/ui', backgroundImage: capabilities_3},
+  { id: 'c1', title: 'AI Models & Intelligence', description: 'Frontier models, Hugging Face, prompt engineering, embeddings, RAG pipelines', backgroundImage: capabilities_1},
+  { id: 'c2', title: 'Agentic Systems & Infrastructure', description: 'CrewAI, LangGraph, MCP, tool integrations, APIs, Docker, databases, real-time systems', backgroundImage: capabilities_2},
+  { id: 'c3', title: 'Interfaces & Integration', description: 'React, Tailwind, shadcn/ui, API integration, System Integration & Deployment', backgroundImage: capabilities_3},
 ];
 
 export default function App() {
@@ -103,6 +103,7 @@ export default function App() {
     </div>
   );
 }
+
 
 
 
