@@ -5,9 +5,10 @@ import call from "../assets/logo/call.svg";
 import linkedin from "../assets/logo/linkedin.svg";
 import whatsapp from "../assets/logo/whatsapp.svg";
 
+const API_URL = import.meta.env.VITE_API_URL;
 
 const handleContactSubmit = async (values) => {
-  await fetch("http://localhost:8000/contact", {
+  await fetch(`${API_URL}/contact`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
