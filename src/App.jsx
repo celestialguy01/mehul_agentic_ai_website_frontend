@@ -20,7 +20,7 @@ import capabilities_3 from "./assets/images/capability_3.png";
 const items_capabilities = [
   { id: 'c1', title: 'AI Models & Intelligence', description: 'Frontier models, Hugging Face, prompt engineering, embeddings, RAG pipelines', backgroundImage: capabilities_1},
   { id: 'c2', title: 'Agentic Systems & Infrastructure', description: 'CrewAI, LangGraph, MCP, tool integrations, APIs, Docker, databases, real-time systems', backgroundImage: capabilities_2},
-  { id: 'c3', title: 'Interfaces & Integration', description: 'React, Tailwind, shadcn/ui, API integration, System Integration & Deployment', backgroundImage: capabilities_3},
+  { id: 'c3', title: 'Interfaces & Integration', description: 'React, Tailwind, shadcn/ui, UX-focused interfaces, System Integration & Deployment', backgroundImage: capabilities_3},
 ];
 
 export default function App() {
