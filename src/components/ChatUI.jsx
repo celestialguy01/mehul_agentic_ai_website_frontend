@@ -25,7 +25,7 @@ export default function ChatUI({
       {/* 🔹 Header */}
       <div className="px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 border-b border-gray-200">
         <p className="text-sm font-medium text-gray-900 sm:text-base">
-        CSMVS Museum, Mumbai- AI Assistant 
+        AI Assistant- CSMVS Museum, Mumbai  
         </p>
       </div>
 
