@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export default function useChatLogic() {
   // 🔹 Chat messages
   const [messages, setMessages] = useState([
@@ -26,7 +28,7 @@ export default function useChatLogic() {
     ]);
 
     try {
-      const response = await fetch("http://localhost:8000/chat", {
+      const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
